@@ -5,7 +5,8 @@ Class {
 	#name : 'DemoTestNeighboursModel',
 	#superclass : 'CMAbstractModel',
 	#instVars : [
-		'thePlots'
+		'thePlots',
+		'closedGrid'
 	],
 	#category : 'DemoTestNeighbourhood-Model',
 	#package : 'DemoTestNeighbourhood-Model'
@@ -23,6 +24,18 @@ DemoTestNeighboursModel class >> prefix [
 	^ 'DTN'
 ]
 
+{ #category : 'accessing' }
+DemoTestNeighboursModel >> closedGrid [
+
+	^ closedGrid
+]
+
+{ #category : 'accessing' }
+DemoTestNeighboursModel >> closedGrid: aBoolean [
+
+	closedGrid := aBoolean
+]
+
 { #category : 'initialization' }
 DemoTestNeighboursModel >> initSpace3 [
 	"Creates the grid with triangular cells.
@@ -32,10 +45,10 @@ DemoTestNeighboursModel >> initSpace3 [
 	<init>
 	CMSpaceModel firstCellIsFlatTopTriangle: false.
 	self
-		createGridNumberOfRows: 5
-		numberOfColumns: 7
+		createGridNumberOfRows: 6
+		numberOfColumns: 11
 		neighbourhood: 3
-		closed: false.
+		closed: closedGrid.
 	DemoTestNeighboursPlot activePovSelector: #povNeighbour
 ]
 
@@ -45,10 +58,10 @@ DemoTestNeighboursModel >> initSpace4 [
 
 	<init>
 	self
-		createGridNumberOfRows: 5
+		createGridNumberOfRows: 7
 		numberOfColumns: 7
 		neighbourhood: 4
-		closed: false.
+		closed: closedGrid.
 	DemoTestNeighboursPlot activePovSelector: #povNeighbour
 ]
 
@@ -61,10 +74,10 @@ DemoTestNeighboursModel >> initSpace6 [
 	<init>
 	CMSpaceModel flatTopHexagons: false.
 	self
-		createGridNumberOfRows: 5
-		numberOfColumns: 7
-		neighbourhood: 6
-		closed: false.
+		createGridNumberOfRows: 6
+		numberOfColumns: 8
+		neighbourhood: 6 
+		closed: closedGrid.
 	DemoTestNeighboursPlot activePovSelector: #povNeighbour
 ]
 
@@ -74,10 +87,10 @@ DemoTestNeighboursModel >> initSpace8 [
 
 	<init>
 	self
-		createGridNumberOfRows: 5
+		createGridNumberOfRows: 7
 		numberOfColumns: 7
 		neighbourhood: 8
-		closed: false.
+		closed: closedGrid.
 	DemoTestNeighboursPlot activePovSelector: #povNeighbour
 ]
 
@@ -87,6 +100,7 @@ DemoTestNeighboursModel >> initialize [
 	super initialize.
 
 	thePlots := OrderedCollection new.
+	closedGrid := false
 ]
 
 { #category : 'control' }
