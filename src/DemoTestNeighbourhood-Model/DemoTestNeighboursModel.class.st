@@ -5,7 +5,6 @@ Class {
 	#name : 'DemoTestNeighboursModel',
 	#superclass : 'CMAbstractModel',
 	#instVars : [
-		'thePlots',
 		'closedGrid'
 	],
 	#category : 'DemoTestNeighbourhood-Model',
@@ -98,8 +97,6 @@ DemoTestNeighboursModel >> initSpace8 [
 DemoTestNeighboursModel >> initialize [
 
 	super initialize.
-
-	thePlots := OrderedCollection new.
 	closedGrid := false
 ]
 
@@ -117,12 +114,5 @@ DemoTestNeighboursModel >> stepCheckNeighbours: t [
 { #category : 'accessing' }
 DemoTestNeighboursModel >> thePlots [
 
-	<getterFor: #DemoTestNeighboursPlot>
-	^ thePlots
-]
-
-{ #category : 'accessing' }
-DemoTestNeighboursModel >> thePlots: anObject [
-
-	thePlots := anObject
+	^ self cells
 ]
