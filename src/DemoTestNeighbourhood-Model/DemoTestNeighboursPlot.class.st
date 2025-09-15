@@ -3,7 +3,7 @@ DemoTestNeighboursPlot is the Cell with various possible shapes
 "
 Class {
 	#name : 'DemoTestNeighboursPlot',
-	#superclass : 'CMSpatialEntityElement',
+	#superclass : 'CMCell',
 	#instVars : [
 		'state'
 	],
