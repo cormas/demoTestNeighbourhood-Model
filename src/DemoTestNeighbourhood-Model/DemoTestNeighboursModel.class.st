@@ -72,10 +72,10 @@ DemoTestNeighboursModel >> initSpace6 [
 	CMSpaceModel flatTopHexagons: false."
 
 	<init>
-	CMSpaceModel flatTopHexagons: false.
+	CMSpaceModel flatTopHexagons: true.
 	self
-		createGridNumberOfRows: 6
-		numberOfColumns: 8
+		createGridNumberOfRows: 5
+		numberOfColumns: 7
 		neighbourhood: 6 
 		closed: closedGrid.
 	DemoTestNeighboursPlot activePovSelector: #povNeighbour
@@ -108,10 +108,10 @@ DemoTestNeighboursModel >> stepCheckNeighbours: t [
 
 	<control>
 	| i |
-	self thePlots do: [ :c | c beNil ].
-	i := TCMMath number: t onCycle: self thePlots size.
-	(self thePlots at: i) beZero.
-	(self thePlots at: i) changeNeighbourhood
+	self cells do: [ :c | c beNil ].
+	i := TCMMath number: t onCycle: self cells size.
+	(self cells at: i) beZero.
+	(self cells at: i) changeNeighbourhood
 ]
 
 { #category : 'accessing' }

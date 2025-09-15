@@ -27,7 +27,7 @@ DTNTestNeighboursModelTest >> testInitSpace3EastNeighbours [
 	m := DemoTestNeighboursModel new
 		     initSpace3;
 		     yourself.
-	targetCell	:= (m cellAt: 8).
+	targetCell	:= (m cellAt: 2).
 	self
 		assert: (targetCell neighbourhood first)
 		identicalTo: (m cellAt: 1).
